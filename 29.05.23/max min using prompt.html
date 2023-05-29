@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let n = prompt("Please Enter Item number");
+        let max = 0;
+        let min = 9999999;
+        let average = 0;
+        let total = 0;
+
+        for (let i = 1; i <= n; i++) {
+
+            let input = prompt("Please Enter Your Number " + i);
+            total += parseInt(input)
+
+            if (max < input) {
+                max = input;
+            }
+
+            if (min > input) {
+                min = input;
+            }
+            average = total / n;
+        }
+
+        alert("Max Number  is " + max + "Min Number is " + min + "total is " + total + "Average is " + average);
+
+
+    </script>
+</body>
+
+</html>
