@@ -49,7 +49,7 @@ label [for="name"]{
     align-items: center;
     justify-content: space-between;
     padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 3.5rem;
 }
 /* form end */
 
@@ -120,4 +120,8 @@ table, th, td{
 
 .red{
     background-color: red;
+}
+
+#one{
+    color: gray-800;
 }
