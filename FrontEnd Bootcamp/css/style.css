@@ -7,11 +7,11 @@
 }
 
 i{
-    color: rgb(221, 221, 149);
+    color: rgb(241, 241, 238);
     
 }
 a{
-    color: burlywood;
+    color: rgb(216, 212, 206);
 }
 
 /* form star */
@@ -48,8 +48,8 @@ label [for="name"]{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-top: 2.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
 }
 /* form end */
 
@@ -57,6 +57,7 @@ label [for="name"]{
 
 *{
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
     nav{
@@ -124,4 +125,12 @@ table, th, td{
 
 #one{
     color: gray-800;
+}
+
+.custom-text{
+    color: rgb(199, 23, 53);
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
 }
