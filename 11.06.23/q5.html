@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q_5</title>
+
+    <STyle>
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+        }
+    </STyle>
+</head>
+<body>
+    
+    <label>Price</label>
+    <input type="number" id="price" oninput="calculatePrice()"><br><br>
+
+    <label>Discount</label>
+    <input type="text" id="discount"><br><br>
+
+    <label>Amount</label>
+    <input type="text" id="amount">
+
+
+    <script>
+        function calculatePrice() {
+            price = document.getElementById("price").value;
+            discount = document.getElementById("discount").value;
+            amount = document.getElementById("amount").value;
+
+
+            discountAmount = 0;
+            payableAmount = 0;
+
+            if (price <= 500) {
+                discountAmount = price * (5 / 100);
+                payableAmount = price - discountAmount;
+            }
+            else if (price <= 1000) {
+                discountAmount = price * (7 / 100);
+                payableAmount = price - discountAmount;
+            }
+            else {
+                discountAmount = price * (7.5 / 100);
+                payableAmount = price - discountAmount;
+            }
+
+            document.getElementById("discount").value = discountAmount;
+            document.getElementById("amount").value = payableAmount;
+        }
+
+    </script>
+
+
+</body>
+</html>

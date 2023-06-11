@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q_2</title>
+</head>
+<body>
+   
+    <script>
+
+function testEmailAddress(email) {
+  if (email.includes('@') && email.includes('.')) {
+    return "Email address is correct.";
+  } else {
+    return "Email address is wrong.";
+  }
+}
+
+let userEmailAddress = prompt("Enter your email address:");
+let result = testEmailAddress(userEmailAddress);
+alert(result);
+
+    </script>
+    
+</body>
+</html>
