@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form to collect trainee's data</title>
+</head>
+
+<body>
+    <form id="idb">
+        <label>Name</label>
+        <input type="text" id="name"><br> <br>
+
+        <label>Contact</label>
+        <input type="text" id="contact"><br><br>
+
+        <label>Remarks</label><br>
+        <textarea name="" id="remarks" cols="25" rows="3"></textarea><br>
+
+        <label>Sex</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <br>
+        <br>
+        <label>Hobby</label>
+        <input type="checkbox" value="travelling">Travelling
+        <input type="checkbox" value="writing">Writing
+        <input type="checkbox" value="reading">Reading<br><br>
+
+        <label>Subject</label>
+        <select name="subject" id="subject">
+            <option value="none">--select one--</option>
+            <option value="jee">JEE</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+        </select>
+<br><br>
+
+        <input type="submit" value="Submit" id="re"> <input type="reset" value="Reset" id="re">
+
+<br><br>
+</form>
+
+
+
+
+
+<script>
+   function dataTransfer(event) {
+           event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const contact = document.getElementById("contact").value;
+            const reamrks = document.getElementById("remarks").value;
+            const subject = document.getElementById("subject").value;
+            const sex = document.querySelector('input[type=radio]:checked').value;
+            const hobby=document.querySelectorAll('input[type=checkbox]:checked');
+            
+let result=[];
+
+ hobby.forEach(function(hobby) {
+
+    result.push(hobby.value);
+});
+   
+
+   var  output = "Name: " + name + "<br>";            
+            output += "Contact: " + contact + "<br>";
+            output += "Remarks : " + reamrks + "<br>";
+            output += "Sex : " + sex + "<br>";
+            output += "Hobby : " + result.join(", ")  + "<br>";
+            output += "Subject : " + subject + "<br>";
+
+
+            var newWindow = window.open('', '_blank');
+            newWindow.document.write('<pre>' + output + '</pre>');
+
+   }
+
+   let form = document.getElementById('idb');
+        form.addEventListener('submit', dataTransfer);
+</script>
+</body>
+
+</html>
