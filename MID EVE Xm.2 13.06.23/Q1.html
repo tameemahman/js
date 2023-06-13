@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q_1</title>
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 300;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <form id="idb">
+        <label>Name</label>
+        <input type="text" id="name"><br> <br>
+
+
+        
+        <label>Remarks</label><br>
+        <textarea name="" id="remarks" cols="25" rows="3"></textarea><br>
+
+        <label>Sex</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <br>
+        <br>
+        <label>Course</label>
+        <input type="checkbox" value="NT">NT
+        <input type="checkbox" value="IAD">IAD
+        <input type="checkbox" value="DDD">DDD
+        <input type="checkbox" value="ESAD">ESAD<br><br>
+
+        <label>Location</label>
+        <select name="location" id="location">
+            <option value="none">--select one--</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit" id="re">
+
+        <br><br>
+    </form>
+
+
+
+
+
+    <script>
+        function dataTransfer(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const reamrks = document.getElementById("remarks").value;        
+            const location = document.getElementById("location").value;
+            const sex = document.querySelector('input[type=radio]:checked').value;
+            const course = document.querySelectorAll('input[type=checkbox]:checked');
+
+            let result = [];
+
+            course.forEach(function (course) {
+
+                result.push(course.value);
+            });
+
+
+            var output = "Name: " + name + "<br>";
+            output += "Remarks : " + reamrks + "<br>";          
+            output += "Sex : " + sex + "<br>";
+            output += "course : " + result.join(", ") + "<br>";
+            output += "location : " + location + "<br>";
+
+
+            var newWindow = window.open('', '_blank');
+            newWindow.document.write('<pre>' + output + '</pre>');
+
+        }
+
+        let form = document.getElementById('idb');
+        form.addEventListener('submit', dataTransfer);
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
